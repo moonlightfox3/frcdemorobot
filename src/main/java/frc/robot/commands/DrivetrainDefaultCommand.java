@@ -26,11 +26,20 @@ public class DrivetrainDefaultCommand extends Command {
   public void execute() {
     double lY = m_controller.getLeftY();
     double rY = m_controller.getRightY();
+    double rX = m_controller.getRightX();
     if (Math.abs(lY) <= ControlConstants.kControllerDeadband) lY = 0;
     if (Math.abs(rY) <= ControlConstants.kControllerDeadband) rY = 0;
+    if (Math.abs(rX) <= ControlConstants.kControllerDeadband) rX = 0;
 
-    double lS = -lY * ControlConstants.kMotorMaxSpeed;
-    double rS = -rY * ControlConstants.kMotorMaxSpeed;
+    double lS = 0.0;
+    double rS = 0.0;
+    if (m_controller.leftTrigger().getAsBoolean() || m_controller.rightTrigger().getAsBoolean()) {
+      lS = (lY * (1 + Math.min(rX, 0))) * -ControlConstants.kMotorMaxSpeed;
+      rS = (lY * (1 - Math.max(rX, 0))) * -ControlConstants.kMotorMaxSpeed;
+    } else {
+      lS = lY * -ControlConstants.kMotorMaxSpeed;
+      rS = rY * -ControlConstants.kMotorMaxSpeed;
+    }
     m_drivetrain.setSpeed(lS, rS);
   }
 
