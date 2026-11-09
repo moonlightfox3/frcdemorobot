@@ -21,8 +21,10 @@ public final class Constants {
     public static final double kMotorMaxSpeed = 0.25;
   }
   public static class MotorConstants {
-    public static final int kMotorLeftId = 1;
-    public static final int kMotorRightId = 2;
+    public static final int kMotorIdLeft = 1;
+    public static final int kMotorIdRight = 2;
+    public static final boolean kMotorInvertLeft = false;
+    public static final boolean kMotorInvertRight = true;
     public static final MotorType kMotorType = MotorType.kBrushless;
   }
   public static class BehaviorConstants {
