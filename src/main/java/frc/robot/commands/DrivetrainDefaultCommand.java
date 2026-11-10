@@ -4,6 +4,8 @@
 
 package frc.robot.commands;
 
+import org.littletonrobotics.junction.Logger;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Constants.ControlConstants;
@@ -32,9 +34,12 @@ public class DrivetrainDefaultCommand extends Command {
     if (Math.abs(rY) <= ControlConstants.kDeadband) rY = 0;
     if (Math.abs(rX) <= ControlConstants.kDeadband) rX = 0;
 
+    boolean steer = ControlConstants.kDefaultSteer != (m_controller.leftTrigger().getAsBoolean() || m_controller.rightTrigger().getAsBoolean());
+    Logger.recordOutput("RoboticsClass/Drivetrain/Steer Controls", steer);
+    
     double lS = -lY * MotorConstants.kMaxSpeed;
-    double rS = -rY * MotorConstants.kMaxSpeed;
-    if (ControlConstants.kDefaultSteer != (m_controller.leftTrigger().getAsBoolean() || m_controller.rightTrigger().getAsBoolean())) {
+    double rS = -(steer ? lY : rY) * MotorConstants.kMaxSpeed;
+    if (steer) {
       lS *= 1 + Math.min(rX, 0);
       rS *= 1 - Math.max(rX, 0);
     }
