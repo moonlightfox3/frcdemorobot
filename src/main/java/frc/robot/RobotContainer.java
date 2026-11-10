@@ -20,7 +20,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final CommandXboxController m_controller = new CommandXboxController(ControlConstants.kControllerPort);
+  private final CommandXboxController m_controller = new CommandXboxController(ControlConstants.kPort);
   public final Drivetrain m_drivetrain = Drivetrain.getInstance();
   public final ForwardAutoCommand m_autoCommand = new ForwardAutoCommand(m_drivetrain);
 

@@ -6,7 +6,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.Constants.BehaviorConstants;
+import frc.robot.Constants.AutoConstants;
 import frc.robot.subsystems.Drivetrain;
 
 public class ForwardAutoCommand extends Command {
@@ -22,7 +22,7 @@ public class ForwardAutoCommand extends Command {
   @Override
   public void initialize() {
     m_timer.restart();
-    m_drivetrain.setSpeed(BehaviorConstants.kAutoSpeedLeft, BehaviorConstants.kAutoSpeedRight);
+    m_drivetrain.setSpeed(AutoConstants.kSpeedLeft, AutoConstants.kSpeedRight);
   }
   @Override
   public void execute() {
@@ -34,6 +34,6 @@ public class ForwardAutoCommand extends Command {
   }
   @Override
   public boolean isFinished() {
-    return m_timer.hasElapsed(BehaviorConstants.kAutoLengthSeconds);
+    return m_timer.hasElapsed(AutoConstants.kLengthSeconds);
   }
 }

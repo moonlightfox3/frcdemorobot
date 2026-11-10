@@ -16,20 +16,21 @@ import com.revrobotics.spark.SparkLowLevel.MotorType;
  */
 public final class Constants {
   public static class ControlConstants {
-    public static final int kControllerPort = 0;
-    public static final double kControllerDeadband = 0.05;
-    public static final double kMotorMaxSpeed = 0.25;
+    public static final int kPort = 0;
+    public static final double kDeadband = 0.05;
+    public static final boolean kDefaultSteer = false;
   }
   public static class MotorConstants {
-    public static final int kMotorIdLeft = 1;
-    public static final int kMotorIdRight = 2;
-    public static final boolean kMotorInvertLeft = false;
-    public static final boolean kMotorInvertRight = true;
-    public static final MotorType kMotorType = MotorType.kBrushless;
+    public static final int kIdLeft = 1;
+    public static final int kIdRight = 2;
+    public static final boolean kInvertLeft = false;
+    public static final boolean kInvertRight = true;
+    public static final double kMaxSpeed = 0.25;
+    public static final MotorType kType = MotorType.kBrushless;
   }
-  public static class BehaviorConstants {
-    public static final double kAutoSpeedLeft = 0.1;
-    public static final double kAutoSpeedRight = 0.1;
-    public static final double kAutoLengthSeconds = 3.0;
+  public static class AutoConstants {
+    public static final double kSpeedLeft = 0.1;
+    public static final double kSpeedRight = 0.1;
+    public static final double kLengthSeconds = 3.0;
   }
 }
