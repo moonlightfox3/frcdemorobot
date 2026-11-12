@@ -7,6 +7,7 @@ package frc.robot;
 import frc.robot.Constants.ControllerConstants;
 import frc.robot.commands.DrivetrainDefaultCommand;
 import frc.robot.commands.ForwardAutoCommand;
+import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -22,6 +23,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final CommandXboxController m_controller = new CommandXboxController(ControllerConstants.kPort);
   public final Drivetrain m_drivetrain = Drivetrain.getInstance();
+  public final ArmSubsystem m_arm = ArmSubsystem.getInstance();
   public final ForwardAutoCommand m_autoCommand = new ForwardAutoCommand(m_drivetrain);
 
   /** The container for the robot. Contains subsystems, IO devices, and commands. */

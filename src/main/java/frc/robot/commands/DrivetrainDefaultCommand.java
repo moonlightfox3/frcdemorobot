@@ -37,8 +37,8 @@ public class DrivetrainDefaultCommand extends Command {
     boolean steer = ControllerConstants.kDefaultSteer != (m_controller.leftTrigger().getAsBoolean() || m_controller.rightTrigger().getAsBoolean());
     Logger.recordOutput("RoboticsClass/Drivetrain/Steer Controls", steer);
     
-    double lS = -lY * MotorConstants.kMaxSpeed;
-    double rS = -(steer ? lY : rY) * MotorConstants.kMaxSpeed;
+    double lS = -lY * MotorConstants.kMaxSpeedDrive;
+    double rS = -(steer ? lY : rY) * MotorConstants.kMaxSpeedDrive;
     if (steer) {
       lS *= 1 + Math.min(rX, 0);
       rS *= 1 - Math.max(rX, 0);
