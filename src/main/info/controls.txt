@@ -1,0 +1,14 @@
+P0 : Driver
+    LT or RT : Hold
+        Switch between tank/steer controls
+    LJY : Axis
+        If : Tank controls
+            Left drive motor
+        Else If : Steer controls
+            Drive input
+    RJY : Axis
+        If : Tank controls
+            Right drive motor
+    RJX : Axis
+        If : Steer controls
+            Steer input

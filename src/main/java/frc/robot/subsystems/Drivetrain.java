@@ -27,17 +27,17 @@ public class Drivetrain extends SubsystemBase {
     Logger.recordOutput("RoboticsClass/Drivetrain/Right Setpoint", m_rightSetpoint);
   }
 
-  /** Speed: -1 to 1 */
+  /** Speed: -1.0 - 1.0 */
   public void setLeftSpeed(double speed) {
     m_leftSetpoint = speed * (MotorConstants.kInvertLeft ? -1 : 1);
     m_leftMotor.set(m_leftSetpoint);
   }
-  /** Speed: -1 to 1 */
+  /** Speed: -1.0 - 1.0 */
   public void setRightSpeed(double speed) {
     m_rightSetpoint = speed * (MotorConstants.kInvertRight ? -1 : 1);
     m_rightMotor.set(m_rightSetpoint);
   }
-  /** Speed: -1 to 1 */
+  /** Speed: -1.0 - 1.0 */
   public void setSpeed(double lSpeed, double rSpeed) {
     setLeftSpeed(lSpeed);
     setRightSpeed(rSpeed);

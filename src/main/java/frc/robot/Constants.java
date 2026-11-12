@@ -15,22 +15,22 @@ import com.revrobotics.spark.SparkLowLevel.MotorType;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-  public static class ControlConstants {
-    public static final int kPort = 0;
-    public static final double kDeadband = 0.05;
-    public static final boolean kDefaultSteer = false;
+  public static class ControllerConstants {                     // Controller constants
+    public static final int kPort = 0;                            // Controller port
+    public static final double kDeadband = 0.05;                  // Controller deadband radius (0.0 - 1.0)
+    public static final boolean kDefaultSteer = false;            // Use steer instead of tank controls by default
   }
-  public static class MotorConstants {
-    public static final int kIdLeft = 1;
-    public static final int kIdRight = 2;
-    public static final boolean kInvertLeft = false;
-    public static final boolean kInvertRight = true;
-    public static final double kMaxSpeed = 0.25;
-    public static final MotorType kType = MotorType.kBrushless;
+  public static class MotorConstants {                          // Motor constants
+    public static final int kIdLeft = 1;                          // Left motor ID
+    public static final int kIdRight = 2;                         // Right motor ID
+    public static final boolean kInvertLeft = false;              // Invert left motor
+    public static final boolean kInvertRight = true;              // Invert right motor
+    public static final double kMaxSpeed = 0.25;                  // Maximum motor speed (0.0 - 1.0)
+    public static final MotorType kType = MotorType.kBrushless;   // Motor brush type
   }
-  public static class AutoConstants {
-    public static final double kSpeedLeft = 0.1;
-    public static final double kSpeedRight = 0.1;
-    public static final double kLengthSeconds = 3.0;
+  public static class AutoConstants {                           // Auto constants
+    public static final double kSpeedLeft = 0.1;                  // Left motor speed (-1.0 - 1.0)
+    public static final double kSpeedRight = 0.1;                 // Right motor speed (-1.0 - 1.0)
+    public static final double kLengthSeconds = 3.0;              // Seconds until stopping both motors (0.0 +)
   }
 }

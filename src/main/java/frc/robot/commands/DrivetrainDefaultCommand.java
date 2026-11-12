@@ -8,7 +8,7 @@ import org.littletonrobotics.junction.Logger;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-import frc.robot.Constants.ControlConstants;
+import frc.robot.Constants.ControllerConstants;
 import frc.robot.Constants.MotorConstants;
 import frc.robot.subsystems.Drivetrain;
 
@@ -30,11 +30,11 @@ public class DrivetrainDefaultCommand extends Command {
     double lY = m_controller.getLeftY();
     double rY = m_controller.getRightY();
     double rX = m_controller.getRightX();
-    if (Math.abs(lY) <= ControlConstants.kDeadband) lY = 0;
-    if (Math.abs(rY) <= ControlConstants.kDeadband) rY = 0;
-    if (Math.abs(rX) <= ControlConstants.kDeadband) rX = 0;
+    if (Math.abs(lY) <= ControllerConstants.kDeadband) lY = 0;
+    if (Math.abs(rY) <= ControllerConstants.kDeadband) rY = 0;
+    if (Math.abs(rX) <= ControllerConstants.kDeadband) rX = 0;
 
-    boolean steer = ControlConstants.kDefaultSteer != (m_controller.leftTrigger().getAsBoolean() || m_controller.rightTrigger().getAsBoolean());
+    boolean steer = ControllerConstants.kDefaultSteer != (m_controller.leftTrigger().getAsBoolean() || m_controller.rightTrigger().getAsBoolean());
     Logger.recordOutput("RoboticsClass/Drivetrain/Steer Controls", steer);
     
     double lS = -lY * MotorConstants.kMaxSpeed;
