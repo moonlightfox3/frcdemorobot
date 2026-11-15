@@ -34,7 +34,9 @@ public class DrivetrainDefaultCommand extends Command {
     if (Math.abs(rY) <= ControllerConstants.kDeadband) rY = 0;
     if (Math.abs(rX) <= ControllerConstants.kDeadband) rX = 0;
 
-    boolean steer = ControllerConstants.kDefaultSteer != (m_controller.leftTrigger().getAsBoolean() || m_controller.rightTrigger().getAsBoolean());
+    boolean steer = ControllerConstants.kAllowSwitch
+      ? (ControllerConstants.kDefaultSteer != (m_controller.leftTrigger().getAsBoolean() || m_controller.rightTrigger().getAsBoolean()))
+      : ControllerConstants.kDefaultSteer;
     Logger.recordOutput("RoboticsClass/Drivetrain/Steer Controls", steer);
     
     double lS = -lY * MotorConstants.kMaxSpeedDrive;

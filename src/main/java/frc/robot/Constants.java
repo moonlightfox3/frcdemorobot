@@ -19,6 +19,7 @@ public final class Constants {
     public static final int kPort = 0;                               // Controller port
     public static final double kDeadband = 0.05;                     // Controller deadband radius (0.0 - 1.0)
     public static final boolean kDefaultSteer = false;               // Use steer instead of tank controls by default
+    public static final boolean kAllowSwitch = true;                 // Allow switching controls between tank and steer
   }
   public static class MotorConstants {                             // Motor constants
     public static final int kIdLeft = 1;                             // Left motor ID
