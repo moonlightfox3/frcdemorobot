@@ -6,17 +6,19 @@ package frc.robot.util;
 
 /** Simple auto creation */
 public class AutoBuilder {
-    public static interface AutoPart {
+    public static class AutoPart {
         public final String kType = "";
-
         public double kDuration = 0.0;
+
+        private AutoPart () {
+        }
     }
-    public static class AutoPartDrive implements AutoPart {
+    public static class AutoPartDrive extends AutoPart {
         public final String kType = "drive";
+        public double kDuration = 0.0;
 
         public double kSpeedLeft = 0.0;
         public double kSpeedRight = 0.0;
-        public double kDuration = 0.0;
 
         public AutoPartDrive (double speedLeft, double speedRight, double duration) {
             kSpeedLeft = speedLeft;
@@ -24,11 +26,11 @@ public class AutoBuilder {
             kDuration = duration;
         }
     }
-    public static class AutoPartArm implements AutoPart {
+    public static class AutoPartArm extends AutoPart {
         public final String kType = "arm";
+        public double kDuration = 0.0;
 
         public double kSpeed = 0.0;
-        public double kDuration = 0.0;
 
         public AutoPartArm (double speed, double duration) {
             kSpeed = speed;

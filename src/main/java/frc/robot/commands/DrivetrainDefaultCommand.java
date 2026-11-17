@@ -10,13 +10,13 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Constants.ControllerConstants;
 import frc.robot.Constants.MotorConstants;
-import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.DrivetrainSubsystem;
 
 public class DrivetrainDefaultCommand extends Command {
-  private Drivetrain m_drivetrain = null;
+  private DrivetrainSubsystem m_drivetrain = null;
   private CommandXboxController m_controller = null;
 
-  public DrivetrainDefaultCommand(Drivetrain drivetrain, CommandXboxController controller) {
+  public DrivetrainDefaultCommand(DrivetrainSubsystem drivetrain, CommandXboxController controller) {
     addRequirements(drivetrain);
     m_drivetrain = drivetrain;
     m_controller = controller;

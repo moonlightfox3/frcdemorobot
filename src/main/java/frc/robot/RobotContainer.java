@@ -9,7 +9,7 @@ import frc.robot.commands.ArmDefaultCommand;
 import frc.robot.commands.DrivetrainDefaultCommand;
 import frc.robot.commands.AutoCommand;
 import frc.robot.subsystems.ArmSubsystem;
-import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.DrivetrainSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -23,9 +23,9 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final CommandXboxController m_controller = new CommandXboxController(ControllerConstants.kPort);
-  public final Drivetrain m_drivetrain = Drivetrain.getInstance();
+  public final DrivetrainSubsystem m_drivetrain = DrivetrainSubsystem.getInstance();
   public final ArmSubsystem m_arm = ArmSubsystem.getInstance();
-  public final AutoCommand m_auto = new AutoCommand(m_drivetrain);
+  public final AutoCommand m_auto = new AutoCommand(m_drivetrain, m_arm);
 
   /** The container for the robot. Contains subsystems, IO devices, and commands. */
   public RobotContainer() {

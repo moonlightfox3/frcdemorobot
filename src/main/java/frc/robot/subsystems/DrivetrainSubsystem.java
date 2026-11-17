@@ -11,14 +11,14 @@ import com.revrobotics.spark.SparkFlex;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.MotorConstants;
 
-public class Drivetrain extends SubsystemBase {
+public class DrivetrainSubsystem extends SubsystemBase {
   private SparkFlex m_leftMotor = new SparkFlex(MotorConstants.kIdLeft, MotorConstants.kTypeDrive);
   private SparkFlex m_rightMotor = new SparkFlex(MotorConstants.kIdRight, MotorConstants.kTypeDrive);
 
   private double m_leftSetpoint = 0.0;
   private double m_rightSetpoint = 0.0;
 
-  public Drivetrain() {
+  private DrivetrainSubsystem() {
     setSpeed(0.0, 0.0);
   }
   @Override
@@ -43,9 +43,9 @@ public class Drivetrain extends SubsystemBase {
     setRightSpeed(rSpeed);
   }
   
-  private static Drivetrain INSTANCE = null;
-  public static Drivetrain getInstance() {
-    if (INSTANCE == null) INSTANCE = new Drivetrain();
+  private static DrivetrainSubsystem INSTANCE = null;
+  public static DrivetrainSubsystem getInstance() {
+    if (INSTANCE == null) INSTANCE = new DrivetrainSubsystem();
     return INSTANCE;
   }
 }

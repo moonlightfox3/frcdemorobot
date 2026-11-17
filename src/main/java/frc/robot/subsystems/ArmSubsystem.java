@@ -19,19 +19,18 @@ public class ArmSubsystem extends SubsystemBase {
   private double m_cachedAbsPos = 0.0;
   private boolean m_hasCachedAbsPos = false;
 
-  public ArmSubsystem() {
+  private ArmSubsystem() {
     setSpeed(0.0);
   }
   @Override
   public void periodic() {
     m_hasCachedAbsPos = false;
+    if ((m_setpoint > 0.0 && !getCanMoveForward()) || (m_setpoint < 0.0 && !getCanMoveBackward())) setSpeed(0.0);
 
     Logger.recordOutput("RoboticsClass/Arm/Setpoint", m_setpoint);
     Logger.recordOutput("RoboticsClass/Arm/Absolute Position", getAbsPos());
     Logger.recordOutput("RoboticsClass/Arm/Can Move Forward", getCanMoveForward());
     Logger.recordOutput("RoboticsClass/Arm/Can Move Backward", getCanMoveBackward());
-    
-    if ((m_setpoint > 0.0 && !getCanMoveForward()) || (m_setpoint < 0.0 && !getCanMoveBackward())) setSpeed(0.0);
   }
 
   /** Caches the absolute position for one tick */

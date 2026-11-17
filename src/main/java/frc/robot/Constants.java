@@ -7,6 +7,8 @@ package frc.robot;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 
 import frc.robot.util.AutoBuilder;
+import frc.robot.util.AutoBuilder.AutoPartArm;
+import frc.robot.util.AutoBuilder.AutoPartDrive;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -50,10 +52,10 @@ public final class Constants {
 
   public static class AutoConstants {                              // Auto constants
     public static final AutoBuilder kAuto = new AutoBuilder(         // Auto path
-      new AutoBuilder.AutoPartDrive(0.2, 0.2, 3.0),
-      new AutoBuilder.AutoPartArm(0.1, 2.0),
-      new AutoBuilder.AutoPartDrive(-0.2, -0.2, 3.0),
-      new AutoBuilder.AutoPartArm(-0.1, 2.0)
+      new AutoPartDrive(0.2, 0.2, 3.0),
+      new AutoPartArm(0.1, 2.0),
+      new AutoPartDrive(-0.2, -0.2, 3.0),
+      new AutoPartArm(-0.1, 2.0)
     );
   }
 }
