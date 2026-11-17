@@ -27,7 +27,7 @@ public final class Constants {
     public static final boolean kAllowSwitch = true;                 // Allow switching controls between tank and steer
 
     public static final boolean kAllowArm = true;                    // Allow controlling the arm
-    public static final double kArmSpeed = 0.1;                      // Arm control speed
+    public static final double kArmSpeed = 0.25;                     // Arm control speed
     public static final String kArmButtonForward = "left";           // POV button for moving the arm forward ("up", "down", "left", "right")
     public static final String kArmButtonBackward = "right";         // POV button for moving the arm backward ("up", "down", "left", "right")
   }
@@ -43,11 +43,6 @@ public final class Constants {
     public static final double kMaxSpeedArm = 0.25;                  // Maximum arm motor speed (0.0 - 1.0)
     public static final MotorType kTypeDrive = MotorType.kBrushless; // Drive motors brush type
     public static final MotorType kTypeArm = MotorType.kBrushless;   // Arm motor brush type
-
-    public static final boolean kArmAbsLimitEnable = true;           // Enable arm motor absolute position limits
-    public static final double kArmAbsLimitForward = 0.8;            // Arm motor forward absolute position limit in rotations
-    public static final double kArmAbsLimitBackward = 0.2;           // Arm motor backward absolute position limit in rotations
-    public static final double kArmAbsLimitShift = 0.5;              // Arm motor absolute position shift in rotations (-1.0 - 1.0)
   }
 
   public static class AutoConstants {                              // Auto constants
