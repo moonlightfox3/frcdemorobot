@@ -29,13 +29,19 @@ public class DrivetrainSubsystem extends SubsystemBase {
 
   /** Speed: -1.0 - 1.0 */
   public void setLeftSpeed(double speed) {
-    m_leftSetpoint = speed * (MotorConstants.kInvertLeft ? -1 : 1);
-    m_leftMotor.set(m_leftSetpoint);
+    double setpoint = speed * (MotorConstants.kInvertLeft ? -1 : 1);
+    if (setpoint != m_leftSetpoint) {
+      m_leftSetpoint = setpoint;
+      m_leftMotor.set(m_leftSetpoint);
+    }
   }
   /** Speed: -1.0 - 1.0 */
   public void setRightSpeed(double speed) {
-    m_rightSetpoint = speed * (MotorConstants.kInvertRight ? -1 : 1);
-    m_rightMotor.set(m_rightSetpoint);
+    double setpoint = speed * (MotorConstants.kInvertRight ? -1 : 1);
+    if (setpoint != m_rightSetpoint) {
+      m_rightSetpoint = setpoint;
+      m_rightMotor.set(m_rightSetpoint);
+    }
   }
   /** Speed: -1.0 - 1.0 */
   public void setSpeed(double lSpeed, double rSpeed) {

@@ -59,9 +59,12 @@ public class ArmSubsystem extends SubsystemBase {
 
   /** Speed: -1.0 - 1.0 */
   public void setSpeed (double speed) {
-    m_setpoint = speed * (MotorConstants.kInvertArm ? -1 : 1);
-    if ((m_setpoint > 0.0 && !getCanMoveForward()) || (m_setpoint < 0.0 && !getCanMoveBackward())) m_setpoint = 0.0;
-    m_motor.set(m_setpoint);
+    double setpoint = speed * (MotorConstants.kInvertArm ? -1 : 1);
+    if ((setpoint > 0.0 && !getCanMoveForward()) || (setpoint < 0.0 && !getCanMoveBackward())) setpoint = 0.0;
+    if (setpoint != m_setpoint) {
+      m_setpoint = setpoint;
+      m_motor.set(m_setpoint);
+    }
   }
   
   private static ArmSubsystem INSTANCE = null;

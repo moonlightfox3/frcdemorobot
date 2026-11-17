@@ -12,3 +12,7 @@ P0 : Driver
     RJX : Axis
         If : Steer controls
             Steer input
+    POV (CFG) : Hold
+        Move arm forward
+    POV (CFG) : Hold
+        Move arm backward
