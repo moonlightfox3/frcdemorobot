@@ -20,6 +20,8 @@ public class DrivetrainDefaultCommand extends Command {
     addRequirements(drivetrain);
     m_drivetrain = drivetrain;
     m_controller = controller;
+    
+    Logger.recordOutput("RoboticsClass/Drivetrain/Steer Controls", ControllerConstants.kDefaultSteer);
   }
   
   @Override

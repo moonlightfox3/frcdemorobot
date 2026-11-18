@@ -30,6 +30,9 @@ public class AutoCommand extends Command {
     
     m_timer = new Timer();
     m_parts = AutoConstants.kAuto.getParts();
+    
+    Logger.recordOutput("RoboticsClass/Auto/Current Part", 0);
+    Logger.recordOutput("RoboticsClass/Auto/Is Finished", false);
   }
 
   @Override
