@@ -6,10 +6,6 @@ package frc.robot;
 
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 
-import frc.robot.util.AutoBuilder;
-import frc.robot.util.AutoBuilder.AutoPartArm;
-import frc.robot.util.AutoBuilder.AutoPartDrive;
-
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants. This class should not be used for any other purpose. All constants should be declared
@@ -43,14 +39,5 @@ public final class Constants {
     public static final double kMaxSpeedArm = 0.25;                  // Maximum arm motor speed (0.0 - 1.0)
     public static final MotorType kTypeDrive = MotorType.kBrushless; // Drive motors brush type
     public static final MotorType kTypeArm = MotorType.kBrushless;   // Arm motor brush type
-  }
-
-  public static class AutoConstants {                              // Auto constants
-    public static final AutoBuilder kAuto = new AutoBuilder(         // Auto path
-      new AutoPartDrive(0.2, 0.2, 3.0),
-      new AutoPartArm(0.1, 2.0),
-      new AutoPartDrive(-0.2, -0.2, 3.0),
-      new AutoPartArm(-0.1, 2.0)
-    );
   }
 }

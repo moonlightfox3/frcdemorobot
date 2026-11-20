@@ -7,7 +7,6 @@ package frc.robot;
 import frc.robot.Constants.ControllerConstants;
 import frc.robot.commands.ArmDefaultCommand;
 import frc.robot.commands.DrivetrainDefaultCommand;
-import frc.robot.commands.AutoCommand;
 import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -25,7 +24,6 @@ public class RobotContainer {
   private final CommandXboxController m_controller = new CommandXboxController(ControllerConstants.kPort);
   public final DrivetrainSubsystem m_drivetrain = DrivetrainSubsystem.getInstance();
   public final ArmSubsystem m_arm = ArmSubsystem.getInstance();
-  public final AutoCommand m_auto = new AutoCommand(m_drivetrain, m_arm);
 
   /** The container for the robot. Contains subsystems, IO devices, and commands. */
   public RobotContainer() {
@@ -53,6 +51,6 @@ public class RobotContainer {
    * @return the command to run in autonomous, or null
    */
   public Command getAutonomousCommand() {
-    return m_auto;
+    return null;
   }
 }
