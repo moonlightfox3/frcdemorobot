@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Constants.ControllerConstants;
@@ -24,6 +25,8 @@ public class ArmDefaultCommand extends Command {
   }
   @Override
   public void execute() {
+    if (DriverStation.isDisabled() || DriverStation.isAutonomous()) return;
+
     if (ControllerConstants.kAllowArm) {
       boolean up = m_controller.povUp().getAsBoolean();
       boolean down = m_controller.povDown().getAsBoolean();
